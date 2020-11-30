@@ -38,7 +38,73 @@
     {% endblock %}
 
     <title>Rivercity Jewellery {% block extra_title %}{% endblock %}</title>
-  </head>
+    
+     <header class="container-fluid fixed-top">
+        <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}"><strong>RIVERCITY JEWELLERY</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Online Store<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+        </ul>
+        <form class="form-inline" method="GET" action="">
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q">
+          </div>
+        </form>
+      </div>
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-primary border-0" aria-labelledby="navbarDropdownMenuLink">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+  </nav>
+</header>
+
   <body>
     
 

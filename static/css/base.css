@@ -40,3 +40,7 @@ html,
     border-top: 3px solid #fff;
     width: 80px;
   }
+
+  .fa-user {
+      color: white;
+  }
