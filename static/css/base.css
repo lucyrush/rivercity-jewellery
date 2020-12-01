@@ -1,34 +1,18 @@
-html,
+ html,
   body,
   header,
   .view {
     height: 100%;
   }
 
-  @media (max-width: 740px) {
-    html,
-    body,
-    header,
-    .view {
-      height: 100vh;
-    }
-  }
+body {
+    background: url('/media/home-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    padding-top: 10%;
+}
 
-  .top-nav-collapse {
-    background-color: #78909c !important;
-  }
-
-  .navbar:not(.top-nav-collapse) {
-    background: transparent !important;
-  }
-
-  @media (max-width: 991px) {
-   .navbar:not(.top-nav-collapse) {
-    background: #78909c !important;
-   }
-  }
-  
-  h1 {
+ h1 {
     letter-spacing: 8px;
   }
 
@@ -41,11 +25,46 @@ html,
     width: 80px;
   }
 
- /* from Bulma */
+/* from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
 }
