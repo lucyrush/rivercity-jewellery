@@ -39,4 +39,9 @@ html,
 .products {
     margin-top: 12vh;
 }
+
+#main-nav{
+    text-transform: uppercase;
+    color: white !important ; 
+}
   /* Media Queries */
