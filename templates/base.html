@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% block meta %}
+   
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    {% endblock %} {% block extra_meta %} {% endblock %} {% block corecss %}
+     
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -33,7 +33,7 @@
     />
     <!-- Static CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-    {% endblock %} {% block corejs %}
+    
     <!-- JQuery -->
     <script
       type="text/javascript"
@@ -54,7 +54,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
     ></script>
-    {% endblock %}
+    
     <title>Rivercity Jewellery {% block extra_title %}{% endblock %}</title>
   </head>
   <!-- Main navigation -->
@@ -114,8 +114,8 @@
             </div>
           </a>
           <div class="dropdown-menu border-0" aria-labelledby="user-options">
-            {% if request.user.is_authenticated %} {% if
-            request.user.is_superuser %}
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
                 <a href="#" class="dropdown-item">Product Management</a>
             {% endif %}
                 <a href="#" class="dropdown-item">My Profile</a>
@@ -143,8 +143,15 @@
 
   <body>
     {% if messages %}
-    <div class="message-container"></div>
-    {% endif %} {% block page_header %} {% endblock %} {% block content %} {%
-    endblock %} {% block postloadjs %} {% endblock %}
+    {% endif %} 
+
+    {% block page_header %} 
+    {% endblock %} 
+    
+    {% block content %} 
+    {%endblock %} 
+    
+    {% block postloadjs %} 
+    {% endblock %}
   </body>
 </html>

@@ -5,7 +5,9 @@
   .nav {
     height: 100%;
   }
-
+ 
+ /* ---------- Home and nav bar */
+ 
   .top-nav-collapse {
     background-color: #78909c !important;
   }
@@ -32,18 +34,10 @@
       color: white;
   }
 
+/* ---------- Products page */
+
+.products {
+    margin-top: 12vh;
+}
   /* Media Queries */
 
-@media (max-width: 740px) {
-    html,
-    body,
-    .view {
-      height: 100vh;
-    }
-  }
-
- @media (max-width: 991px) {
-   .navbar:not(.top-nav-collapse) {
-    background: #78909c !important;
-   }
-  }
