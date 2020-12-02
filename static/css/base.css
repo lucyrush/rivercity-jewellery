@@ -1,17 +1,9 @@
-html,
+  html,
   body,
-  /* header, */
-  .view {
+  header,
+  .view, 
+  .nav {
     height: 100%;
-  }
-
-  @media (max-width: 740px) {
-    html,
-    body,
-    /* header, */
-    .view {
-      height: 100vh;
-    }
   }
 
   .top-nav-collapse {
@@ -19,13 +11,7 @@ html,
   }
 
   .navbar:not(.top-nav-collapse) {
-    background: transparent !important;
-  }
-
-  @media (max-width: 991px) {
-   .navbar:not(.top-nav-collapse) {
-    background: #78909c !important;
-   }
+    background-color: #78909c !important;
   }
   
   h1 {
@@ -42,6 +28,22 @@ html,
   }
 
   .home-icon,
-    .my-0 {
+    .det {
       color: white;
+  }
+
+  /* Media Queries */
+
+@media (max-width: 740px) {
+    html,
+    body,
+    .view {
+      height: 100vh;
+    }
+  }
+
+ @media (max-width: 991px) {
+   .navbar:not(.top-nav-collapse) {
+    background: #78909c !important;
+   }
   }
