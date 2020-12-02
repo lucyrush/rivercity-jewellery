@@ -56,6 +56,8 @@
     ></script>
     
     <title>Rivercity Jewellery {% block extra_title %}{% endblock %}</title>
+    {% block page_header %}
+    {% endblock %}
   </head>
   <!-- Main navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
@@ -145,8 +147,7 @@
     {% if messages %}
     {% endif %} 
 
-    {% block page_header %} 
-    {% endblock %} 
+    
     
     {% block content %} 
     {%endblock %} 
