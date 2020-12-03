@@ -1,15 +1,16 @@
-html,
-  body,
-  header,
-  .view {
+html {
     height: 100%;
   }
 
 /* ------------------- Home */
+
+.landingsection {
+    margin-top: 12vh;
+}
 body {
     background: url('/media/home-background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 100%;
     padding-top: 10%;
 }
 
