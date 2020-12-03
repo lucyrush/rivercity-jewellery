@@ -10,47 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<section class="products">
-     <div class="container">
+    <div class="overlay"></div>
+    <div class="container">
         <div class="row">
             <div class="col">
-                
+                {{ products }}
             </div>
         </div>
     </div>
-</section>
-
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-    <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {% include 'includes/main-nav.html' %}
-            </nav>
-        </div>
-  </div>
-</div>
-    <div class="col-12 col-sm-6 col-lg-8">
-    <ul class="nav md-pills nav-justified">
-  <li class="nav-item">
-    <a class="nav-link active" href="#!">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#!">Link 1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#!">Link 2</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#!">Link 3</a>
-  </li>
-</ul>
-        {{ products }}
-    </div>
-  </div>
-</div>
-
 {% endblock %}

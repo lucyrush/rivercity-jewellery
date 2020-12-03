@@ -1,22 +1,19 @@
 html,
   body,
   header,
-  .view, 
-  .nav {
+  .view {
     height: 100%;
   }
- 
- /* ---------- Home and nav bar */
- 
-  .top-nav-collapse {
-    background-color: #78909c !important;
-  }
 
-  .navbar:not(.top-nav-collapse) {
-    background-color: #78909c !important;
-  }
-  
-  h1 {
+/* ------------------- Home */
+body {
+    background: url('/media/home-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    padding-top: 10%;
+}
+
+ h1 {
     letter-spacing: 8px;
   }
 
@@ -29,19 +26,30 @@ html,
     width: 80px;
   }
 
-  .home-icon,
-    .det {
-      color: white;
-  }
-
-/* ---------- Products page */
-
-.products {
-    margin-top: 12vh;
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
-#main-nav{
-    text-transform: uppercase;
-    color: white !important ; 
+.text-black {
+    color: black !important;
 }
-  /* Media Queries */
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* ------------------- Products */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
