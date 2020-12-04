@@ -16,7 +16,7 @@
     {% for post in category.posts.all %}
         <article>
             <h2>{{ post.title }}</h2>
-            <time>{{ post.date_added }}</time>
+            <time>{{ post.date_added|date:"d M, y"}}</time>
             <p>{{ post.intro }}</p>
             <a href="{% url 'blog_detail' post.slug %}">Read more</a> 
         </article>

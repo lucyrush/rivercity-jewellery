@@ -13,7 +13,7 @@
     <div class="overlay"></div>
         <article>
             <h1>{{ post.title }}</h1>
-            <time>{{ post.date_added }}</time> - <a href="{% url 'category' post.category.slug %}">{{ post.category.title }}</a>
+            <time>{{ post.date_added|date:"d M, y"}}</time> - <a href="{% url 'category' post.category.slug %}">{{ post.category.title }}</a>
             <p><strong>{{ post.intro }}</strong></p>
             <p>{{ post.body }}</p>
         </article>   
