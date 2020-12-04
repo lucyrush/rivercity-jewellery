@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . models import Category, Post
 from . forms import CommentForm
 
@@ -15,7 +15,17 @@ def blog(request):
 def blog_detail(request, slug):
     post = Post.objects.get(slug=slug)
 
-    form = CommentForm()
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.post = post
+            obj.save()
+
+            return redirect('blog_detail', slug=post.slug)
+    else:
+        form = CommentForm()
 
     context = {
         'post': post,
