@@ -11,5 +11,11 @@
 
 {% block content %}
     <div class="overlay"></div>
-    blog page
+    {% for post in posts %}
+        <article>
+            <h2>{{ post.title }}</h2>
+            <time>{{ post.date_added }}</time>
+            <p>{{ post.intro }}</p>
+        </article>
+    {% endfor%}    
 {% endblock%}

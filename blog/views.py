@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from . models import Category, Post
 
 
 def blog(request):
-    return render(request, 'blog/blog.html')
+    posts = Post.objects.all()
+
+    context = {
+        'posts':posts
+    }
+    return render(request, 'blog/blog.html', context)
