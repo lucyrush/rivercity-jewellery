@@ -16,5 +16,15 @@
             <time>{{ post.date_added|date:"d M, y"}}</time> - <a href="{% url 'category' post.category.slug %}">{{ post.category.title }}</a>
             <p><strong>{{ post.intro }}</strong></p>
             <p>{{ post.body }}</p>
+
+            <h2>Add a comment</h2>
+
+            <form method="post" action=".">
+                {% csrf_token %}
+
+                {{ form.as_table }}
+
+                <input type="submit" value="Add comment">
+            </form>
         </article>   
 {% endblock%}
