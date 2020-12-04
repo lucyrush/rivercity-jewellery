@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <h1>{{ category.title }}</h1>
+
+    {% for post in category.posts.all %}
+        <article>
+            <h2>{{ post.title }}</h2>
+            <time>{{ post.date_added }}</time>
+            <p>{{ post.intro }}</p>
+            <a href="{% url 'blog_detail' post.slug %}">Read more</a> 
+        </article>
+    {% endfor%}    
+{% endblock%}
